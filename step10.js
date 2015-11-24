@@ -2,10 +2,14 @@
 
 function somethingAsync(){
   setTimeout(function(){
-    return "Hello World from async function";
+    iter.next("Hello World from async function!");
   }, 1000);
 }
 
-var result = somethingAsync();
-console.log(result); //undefined
-// exits after 1000ms
+function *run(){
+  var result = yield somethingAsync();
+  console.log(result); // Hello World from async function!
+}
+
+var iter = run();
+iter.next();

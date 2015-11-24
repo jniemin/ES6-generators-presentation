@@ -1,6 +1,12 @@
-/*
- * Copyright (c) 2015 Falconet Systems Oy 
- * Created by juise on 24/11/15 11:46.
- */
-
 "use strict";
+
+function somethingAsync(callback){
+  setTimeout(function(){
+    var data = "Hello World from async function";
+    callback(data);
+  }, 1000);
+}
+
+somethingAsync(function(data){
+  console.log(data)
+});

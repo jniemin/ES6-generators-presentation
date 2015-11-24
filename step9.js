@@ -1,6 +1,11 @@
-/*
- * Copyright (c) 2015 Falconet Systems Oy 
- * Created by juise on 24/11/15 11:55.
- */
-
 "use strict";
+
+function somethingAsync(){
+setTimeout(function(){
+  return "Hello World from async function";
+}, 1000);
+}
+
+var result = somethingAsync();
+console.log(result); //undefined
+// exits after 1000ms
